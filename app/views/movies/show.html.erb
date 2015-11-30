@@ -1,0 +1,44 @@
+<p>
+  <strong>Movie Title:</strong>
+  <%= @movie.title %>
+ <br>
+  <strong>Year:</strong>
+  <%= @movie.year %>
+<br>
+  <strong>Rating:</strong>
+  <%= @movie.rating %>
+<br>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+  <br>
+<td><%= image_tag(@movie.image_path, height: '175', width: '175') %></td>
+</p>
+<br>
+<h2>Reviews</h2>
+<table border='1' style='border-collapse: collapse;'>
+  <tr>
+    <th>Reviewer</th>
+    <th>Comment</th>
+    <th></th>
+  </tr>
+ 
+  <% @movie.reviews.each do |review| %>
+    <tr>
+      <td><%= review.reviewer %></td>
+      <td><%= review.comment %></td>
+      <td><%= link_to 'Delete', [review.movie, review],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+ </table>
+
+<br>
+
+<h2>Add a review:</h2>
+<%= render 'reviews/form' %>
+
+<p> 
+  <button><%= link_to 'Back', movies_path %></button>
+</p>

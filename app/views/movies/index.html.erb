@@ -1,0 +1,37 @@
+<h1>Listing Movies</h1>
+<%= link_to 'New Movie', new_movie_path %>
+
+  <br>
+  <br>
+
+<table border='2' style='border-collapse: collapse;'>
+  <tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Rating</th>
+    <th>Description</th>
+    <th>Show Details</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Movie Poster</th>
+  </tr>
+ 
+  <% @movie.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie.rating %></td>
+      <td><%= movie.description %></td>
+      <td><%= link_to 'Show', movie_path(movie) %></td>
+      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+      <td><%= link_to 'Destroy', movie_path(movie),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <td><%= image_tag(movie.image_path, height: '125', width: '175') %></td>
+    </tr>
+  <% end %>
+</table>
+
+  <br>
+  <br>
+  <button><%= link_to 'Add new movie', new_movie_path %></button>

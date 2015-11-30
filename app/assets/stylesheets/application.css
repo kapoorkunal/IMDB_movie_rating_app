@@ -1,0 +1,48 @@
+ html{
+    min-height:100%;
+    position:relative;
+}
+body{
+    height:100%; 
+	background-color: #202020;
+}
+ #header, #footer{
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: #B81D18;
+ 	overflow: auto;
+ }
+
+#content{
+	margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: #B6B6B6;	
+ 	color: #57102C;
+	overflow: auto;
+	height: auto;
+}
+#contentWrapper{
+	margin: 3em;
+	width: 800px;
+	margin-left: auto;
+ 	margin-right: auto;
+
+}
+a{
+ 	color: #004687;
+ }
+ 
+table{
+	border-color: black;
+}
+button, input[type=submit] {
+	background-color: #EE4B3E;
+	color: black;
+
+}
+p{
+	width: 100%;
+}
+input[type=text]{
+	width: 40%;
+}
